@@ -522,13 +522,13 @@
         .ninatext{ display:-webkit-box; -webkit-line-clamp:1; -webkit-box-orient:vertical; overflow:hidden; font-size:.88rem; margin-top:0; }
         .ninabar button{ padding:.22rem .45rem; font-size:.76rem; }
         .boardwrap{ gap:.5rem; align-items:stretch; }
-        .boardwrap .board{ flex:1 1 auto; min-width:0; max-width:none; height:100%; margin:0;
+        .boardwrap .board{ flex:1 1 auto; min-width:0; max-width:none; height:auto; min-height:0; margin:0;
           padding:.16rem; border-radius:13px; display:flex; flex-direction:column; }
-        .zonerow{ flex:1 1 0; min-height:0; gap:.11rem; margin:.05rem 0; align-items:stretch; }
-        .zone{ aspect-ratio:auto; height:100%; border-radius:6px; padding:1px; }
-        .zone>.card{ height:100%; width:auto; max-width:100%; }
-        .pile{ aspect-ratio:auto; height:100%; }
-        .pile>.card{ height:100%; width:auto; max-width:100%; margin:0 auto; }
+        .zonerow{ flex:1 1 0; min-height:0; gap:.11rem; margin:.05rem 0; align-items:stretch; grid-template-rows:minmax(0,1fr); }
+        .zone{ aspect-ratio:auto; height:auto; min-height:0; border-radius:6px; padding:1px; }
+        .zone>.card{ height:100%; max-height:100%; width:auto; max-width:100%; }
+        .pile{ aspect-ratio:auto; height:auto; min-height:0; }
+        .pile>.card{ height:100%; max-height:100%; width:auto; max-width:100%; margin:0 auto; }
         .midrow{ flex:0 0 auto; flex-wrap:nowrap; overflow:hidden; padding:.07rem .06rem; margin:.05rem 0; gap:.3rem; }
         .phase{ font-size:.76rem; white-space:nowrap; } .turntag{ font-size:.7rem; padding:.08rem .4rem; white-space:nowrap; }
         .midrow button{ padding:.24rem .46rem; font-size:.84rem; white-space:nowrap; min-height:0; }
@@ -544,10 +544,10 @@
         .actions button{ padding:.32rem .54rem; font-size:.88rem; }
         .logbox{ max-height:42px; font-size:.8rem; padding:.34rem .6rem; margin-top:.26rem; }
         /* --- Panel de información: visible a la izquierda del tablero --- */
-        .cardinfo{ display:block; flex:0 0 158px; width:158px; position:static; height:100%;
+        .cardinfo{ display:block; flex:0 0 158px; width:158px; position:static; height:auto;
           max-height:none; overflow-y:auto; padding:.42rem; border-radius:12px; }
         .cardinfo .cihint{ font-size:.78rem; line-height:1.32; }
-        .cardinfo img.ciart{ width:min(104px,100%); margin:0 auto; border-radius:8px; }
+        .cardinfo img.ciart{ width:min(88px,100%); margin:0 auto; border-radius:8px; }
         .cardinfo h4{ font-size:.95rem; margin:.38rem 0 .05rem; }
         .cardinfo .cimeta{ font-size:.78rem; margin:.08rem 0; }
         .cardinfo .ciatk{ font-size:.86rem; margin:.08rem 0; }
@@ -597,14 +597,14 @@
         /* --- Tablero con el panel de la carta a la izquierda --- */
         .boardwrap{ gap:.6rem; align-items:stretch; }
         .cardinfo{ display:block; flex:0 0 240px; width:240px; position:static;
-          height:100%; overflow-y:auto; }
-        .boardwrap .board{ height:100%; display:flex; flex-direction:column; max-width:none; padding:.3rem; }
+          height:auto; overflow-y:auto; }
+        .boardwrap .board{ height:auto; min-height:0; display:flex; flex-direction:column; max-width:none; padding:.3rem; }
         /* --- Filas del tablero repartiendo la altura libre; cartas por alto --- */
-        .zonerow{ flex:1 1 0; min-height:0; align-items:stretch; }
-        .zone{ aspect-ratio:auto; height:100%; }
-        .zone>.card{ height:100%; width:auto; max-width:100%; }
-        .pile{ aspect-ratio:auto; height:100%; }
-        .pile>.card{ height:100%; width:auto; max-width:100%; margin:0 auto; }
+        .zonerow{ flex:1 1 0; min-height:0; align-items:stretch; grid-template-rows:minmax(0,1fr); }
+        .zone{ aspect-ratio:auto; height:auto; min-height:0; }
+        .zone>.card{ height:100%; max-height:100%; width:auto; max-width:100%; }
+        .pile{ aspect-ratio:auto; height:auto; min-height:0; }
+        .pile>.card{ height:100%; max-height:100%; width:auto; max-width:100%; margin:0 auto; }
         .midrow{ flex:0 0 auto; flex-wrap:nowrap; }
         /* --- Mano del jugador dimensionada por alto para que quepa --- */
         .handrow .card{ height:min(92px,13dvh); width:auto; }
